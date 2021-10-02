@@ -1,0 +1,444 @@
+html{
+    width: 100%;
+    height: 99%;
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+ }    
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    text-align:left;
+    font-size:0px;
+    background-color:cadetblue;
+ }    
+.titlebar{
+  width:100%;
+  height:30px;
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+  background-color: black;
+}
+.titlebar_title{
+  float:left;
+  margin-top:5px;
+  font-size:15px;
+  margin-left:5px;
+  color:grey;
+  width:100px;
+  height:15px;
+}
+.title_button{
+  float:right;
+  width:30px;
+  height:30px;
+  -webkit-app-region: no-drag;
+  border:none;
+  background-color: black;
+  text-align: center;
+}
+.title_button:hover{
+  background-color: grey;
+}
+.contents{
+  width:100%;
+  height:calc( 100% - 50px );
+}
+/*메인화면*/
+/*메인, 경계*/
+div.main{
+  background-color:white;
+  overflow:auto;
+  font-size:20px;
+  color:black;
+  text-align: center;
+  overflow-x:hidden;
+}
+/*메뉴바, 색상, 크기*/
+div.menu_top{
+  margin-left:2%;
+  margin-top:5px;
+  background-color: white;
+  width:96%;
+  height:40px;
+  text-align: right;
+  color:black;
+  font-size:20px;
+}
+div.menu_top div{
+  text-align: center;
+  cursor: pointer;
+}
+/*메인 업데이트*/
+.main-manga-link{
+  cursor:pointer;
+}
+/*오랜지*/
+.orangered{
+  color:rgb(255, 60, 0);
+}
+/*만화 제목 표시*/
+.manga-title{
+  background-color: white;
+  border:0px;
+  width:100%;
+  height:auto;
+  font-size:20px;
+}
+/*설명충*/
+.explainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:auto;
+  max-width: 400px;
+  height:auto;
+  transform: translate(-50%, -50%);
+  display:none;
+  border:0px;
+  background-color: black;
+  color:white;
+  z-index: 1;
+}
+button.div {
+  border:0px;
+}
+/*선택*/
+.selector-mangalist{
+  position: absolute;
+  max-height: 300px;
+  overflow-x:hidden;
+  overflow-y:auto;
+  z-index: 0;
+}
+
+
+
+
+
+/*작은창*/
+@media (max-width : 768px){
+  /*메인*/
+  div.main{
+    margin-left:2%;
+    width:96%;
+    margin-top:3px;
+    height:calc( 100% - 70px );
+    border:1px solid black;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  /*컨트롤바*/
+  div.control_bar{
+    background-color: white;
+    margin-left:2%;
+    width:96%;
+    margin-top:3px;
+    height:40px;
+    text-align:center;
+  }
+  /*메인업데이트*/
+  div.main_text{
+    width:calc( 98% - 2px );
+    height:20%;
+    border:1px solid black;
+    margin-left:1%;
+    margin-top:5px;
+    max-height:105px !important;
+    size:0px;
+  }
+  div.img-container{
+    margin-left:5px;
+    float:left;
+    width:20%;
+    height:100%;
+  }
+  img.main-image{
+    height:100%;
+  }
+  div.main-title{
+    margin-top:10px;
+    margin-left:18px;
+    float:left;
+    width:50%;
+    height:80%;
+    size:12px;
+    font-size:16px;
+    white-space: normal;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  div.main-button-and-date{
+    float:left;
+    width:calc( 25% - 13px );
+    height:100%;
+    text-align: center;
+    line-height: 11px;
+  }
+  button.main-list-button{
+    margin-top:20px;
+    width:50px;
+    display:inline-block;
+  }
+  span.update-date{
+    margin-top:3px;
+  }
+  span.curlie{
+    display:none;
+  }
+  /*사이드 숨기기*/
+  div.side_widget{
+    display:none;
+  }
+  div.side_list{
+    display:none;
+  }
+  div.side_new{
+    display:none;
+  }
+  /*목록*/
+  .manga-list{
+    border:1px solid black;
+    width:calc( 98% - 2px );
+    margin-left:1%;
+    height:40px;
+    text-align: left;
+  }
+  .manga-list-epnumber{
+    display:inline-block;
+    border:0px;
+    width:50px;
+    height:calc( 100% - 2px );
+    text-align:center;
+    font-size:20px;
+    background-color: white;
+  }
+  .manga-list-title{
+    display:inline-block;
+    border:0px;
+    width:calc( 100% - 170px );
+    height:calc( 100% - 2px );
+    text-align:center;
+    font-size:20px;
+    background-color: white;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    cursor:pointer;
+  }
+  .manga-list-date{
+    display:inline-block;
+    border:0px;
+    width:120px;
+    border:0px;
+    height:calc( 100% - 2px );
+    text-align:center;
+    font-size:20px;
+    background-color: white;
+
+  }
+  /*ㅇㅋ?*/
+div.search-button-and-date{
+  float:left;
+  width:calc( 25% - 13px );
+  height:100%;
+  text-align: center;
+}
+}
+
+
+
+
+/*큰창*/
+@media screen and (min-width : 769px){
+  /*메뉴바*/
+  div.menu_top{
+    width:calc( 100% - 20px);
+    margin-left: 10px;
+  }
+  /*메인*/
+  div.main{
+    display:block;
+    margin-top:3px;
+    margin-left: 30px;
+    margin-right: 10px;
+    width:calc( 100% - 320px );
+    height:calc( 100% - 30px);
+    float:left;
+  }
+  /*메인업데이트*/
+  div.main_text{
+    width:calc( 98% - 2px );
+    height:20%;
+    border:1px solid black;
+    margin-left:1%;
+    max-height: 120px;
+    margin-top:5px;
+    size:0px;
+  }
+  div.img-container{
+    margin-left:5px;
+    float:left;
+    width:90px;
+    height:100%;
+    
+  }
+  img.main-image{
+    height:100%;
+  }
+  div.main-title{
+    margin-top:10px;
+    margin-left:20px;
+    float:left;
+    width:calc( 100% - 245px);
+    height:80%;
+    size:12px;
+    font-size:16px;
+    white-space: normal;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  div.main-button-and-date{
+    float:left;
+    width:130px;
+    height:100%;
+    text-align: center;
+  }
+  button.main-list-button{
+    margin-top:20px;
+    width:70px;
+    display:inline-block;
+  }
+  /*컨트롤바숨기기*/
+  div.control_bar{
+    display:none;
+  }
+  /*사이드*/
+  div.side_widget{
+    display:block;
+    background-color:rgba(255, 255, 255, 0);
+    margin-right:30px;
+    width:250px;
+    height:calc( 100% - 30px);
+    float: left;
+    margin-top:3px;
+  }
+  div.side_list{
+    background-color:white;
+    width:100%;
+    height:calc( 50% - 5px);
+    margin-bottom:10px;
+    font-size:12px;
+  }
+  div.side_new{
+    background-color: white;
+    width:100%;
+    height:calc( 50% - 5px);
+  }
+  div.side-list-manga-title{
+    width:calc( 100% - 2px );
+    height:38px;
+    border:1px solid black;
+  }
+  div.side-list-manga-list{
+    width:calc( 100% - 2px );
+    height:calc( 100% - 42px);
+    border:1px solid black;
+    background-color: #dfdfdf;
+  }
+  div.side-list-manga-list-list{
+    width:98%;
+    height:98%;
+    background-color: #dfdfdf;
+    overflow-x:auto;
+  }
+  button.listname{
+    width:30%;
+    height:100%;
+    float:left;
+    background-color: #dfdfdf;
+    border:0px;
+  }
+  /*목록*/
+  .manga-list{
+    border:1px solid black;
+    width:97%;
+    margin-left:2%;
+    height:40px;
+    text-align: left;
+    font-size:16px;
+    background-color: white;
+  }
+  .manga-list-epnumber{
+    display:inline-block;
+    border:0px;
+    width:50px;
+    height:calc( 100% - 2px );
+    text-align:center;
+    background-color: inherit;
+  }
+  .manga-list-title{
+    display:inline-block;
+    border:0px;
+    width:calc( 100% - 170px );
+    height:calc( 100% - 2px );
+    text-align:center;
+    background-color: inherit;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    cursor:pointer;
+  }
+  .manga-list-date{
+    display:inline-block;
+    border:0px;
+    width:120px;
+    border:0px;
+    height:calc( 100% - 2px );
+    text-align:center;
+    background-color: inherit;
+
+  }
+  /*ㅇㅋ?*/
+div.search-button-and-date{
+  float:left;
+  width:130px;
+  height:100%;
+  text-align: center;
+}
+}
+
+
+
+ /*
+ @media (max-width:calc(device-width * 1/2)){
+   div.main {
+     width:96%;
+     height:calc( 85% - 1px );
+     border:solid blue 1px; 
+     display:block;
+     margin-left:2%;
+     overflow:auto;
+     }
+   .main div img {
+     display:inline-block;
+     width:100%;
+     max-width:700px;
+   }
+  }
+  @media (min-width:calc(device-width * 1/2)){
+    div.main {
+      width:96%;
+      height:calc( 85% - 1px );
+      border:solid red 1px; 
+      display:block;
+      margin-left:2%;
+      overflow:auto;
+      }
+    .main div img {
+      display:inline-block;
+      width:100%;
+      max-width:700px;
+    }
+  }*/
