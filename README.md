@@ -1,2 +1,5 @@
-# MirrortokiVer2
-<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FHVBattleCruiser%2FMirrortokiVer2&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23FFFFFF&title=visitors&edge_flat=false"/></a>
+<h1>미러토끼 Ver2</h1>
+PC 마나토끼 뷰어 & 다운로더 입니다<br>
+현재 개발중입니다.<br>
+프로그램 아이콘 만들어주실 분 구해요<br>
+
