@@ -1,0 +1,91 @@
+{
+  "name": "mirrortoki_ver2",
+  "productName": "Mirrortoki Ver2",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "2.0.0",
+  "author": "galactagun",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "deploy": "electron-builder --windows nsis:ia32",
+    "build:win": "npm run build:win32 && npm run build:win64",
+    "build:win32": "electron-builder --win portable --ia32",
+    "build:win64": "electron-builder --win portable --x64"
+  },
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "dropbox": "^2.5.12",
+    "electron-is-dev": "latest",
+    "fs": "0.0.1-security",
+    "image-to-pdf": "^1.0.0",
+    "pdfkit": "^0.12.3",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.59",
+    "@electron-forge/maker-deb": "^6.0.0-beta.59",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.59",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.59",
+    "@electron-forge/maker-zip": "^6.0.0-beta.59",
+    "electron": "^13.1.7",
+    "electron-builder": "^22.11.7",
+    "electron-is-dev": "latest",
+    "electron-packager": "^14.2.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel"
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "build": {
+    "productName": "MirrorToki",
+    "appId": "com.hellven.mirrortoki",
+    "asar": true,
+    "protocols": {
+      "name": "MirrorToki",
+      "schemes": [
+        "MirrorToki"
+      ]
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": "./resources/installer/Icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "directories": {
+      "buildResources": "./resources/installer/",
+      "output": "./dist/",
+      "app": "."
+    }
+  }
+}
